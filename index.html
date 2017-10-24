@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://marvl.infotech.monash.edu/webcola/cola.v3.min.js"></script>
+    <script src="graph.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/wagenaartje/neataptic/master/graph/graph.css">
+    <script src="https://rawgit.com/wagenaartje/neataptic/master/dist/neataptic.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <svg class="draw" width="1000px" height="1000px"/>
+      </div>
+    </div>
+    <script>
+      var network = new neataptic.architect.Perceptron(4, 30, 1);
+      // var trainingSet = [
+      //   { input: [0,0], output: [0] },
+      //   { input: [0,1], output: [1] },
+      //   { input: [1,0], output: [1] },
+      //   { input: [1,1], output: [0] }
+      // ];
+
+      // // await network.evolve(trainingSet, {
+      // //   equal: true,
+      // //   error: 0.03
+      // //  });
+
+      // // var network = new neataptic.architect.Perceptron(2, 4, 1);
+
+      // // training set same as in above example
+      // network.train(trainingSet, {
+      //   error: 0.01
+      // });
+
+      // network.activate([1,1]);
+      drawGraph(network.graph(400, 400), '.draw');
+    </script>
+  </body>
+</html>
